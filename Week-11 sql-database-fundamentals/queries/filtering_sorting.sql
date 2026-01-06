@@ -1,0 +1,4 @@
+SELECT * FROM Employee
+WHERE salary > 65000
+ORDER BY salary DESC
+LIMIT 3;

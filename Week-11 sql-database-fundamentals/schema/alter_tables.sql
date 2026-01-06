@@ -1,0 +1,5 @@
+ALTER TABLE Employee
+ADD email VARCHAR(100);
+
+ALTER TABLE Employee
+MODIFY emp_name VARCHAR(100);
