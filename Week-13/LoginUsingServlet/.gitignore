@@ -1,0 +1,26 @@
+# Eclipse
+.metadata/
+.settings/
+.project
+.classpath
+
+# Build output
+bin/
+target/
+*.class
+
+# Logs & OS files
+*.log
+.DS_Store
+
+# Java crash logs
+hs_err_pid*
+replay_pid*
+
+# Package files (ignore build artifacts)
+*.war
+*.ear
+*.nar
+*.zip
+*.tar.gz
+*.rar
