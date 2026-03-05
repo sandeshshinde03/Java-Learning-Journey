@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	https://www.springframework.org/schema/beans/spring-beans.xsd">
+   
+    
+    <bean class="com.springcore.Student" name="s1">
+    <property name="rollno">
+    <value>1</value>
+    </property>
+    
+    <property name="name">
+    <value>sandesh</value>
+    </property>
+    
+    <property name="address">
+    <value>pune</value>
+    </property>
+    
+    </bean>
+    
+    <bean class="com.springcore.Student" name="s2">
+    <property name="rollno" value="2"/>
+  
+    <property name="name" value="Aditya"/>
+    
+    <property name="address" value="pune"/>
+    
+    </bean>
+    <bean class="com.springcore.Student" name="s3" p:rollno="3" p:name="reva" p:address="pune"/>
+    
+    
+     </beans>
+    
+    
+    

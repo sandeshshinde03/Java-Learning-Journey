@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	https://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean class="com.springcore.Collection.Employee" id="c2">
+	<property name="eid" value="2"/>
+	<property name="ename" value="sandy"/>
+	<property name="phones">
+	<list>
+	<value>16789326157218</value>
+	<value>2134789098</value>
+	</list>
+	</property>
+	<property name="address">
+	<set>
+	<value>pune</value>
+	<value>mumbai</value>
+	</set>
+	</property>
+	<property name="project">
+	<map>
+	<entry key="1" value="EMS"/>
+	<entry key="2" value="SMS"/>
+	</map>
+	</property>
+	</bean>
+	
+	
+	</beans>
