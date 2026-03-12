@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+      xmlns:p="http://www.springframework.org/schema/p"
+      xmlns:tx="http://www.springframework.org/schema/tx"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.springframework.org/schema/beans 
+      http://www.springframework.org/schema/beans/spring-beans.xsd
+      http://www.springframework.org/schema/tx 
+      http://www.springframework.org/schema/tx/spring-tx.xsd">
+      
+      <tx:annotation-driven/>
+    
+  <!--   HIBERNATE PROPEERTIES -->
+    <bean class="org.springframework.jdbc.datasource.DriverManagerDataSource" name="dmds">
+<!--         <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
+ -->        <property name="url" value="jdbc:mysql://localhost:3306/orm"/>
+        <property name="username" value="root"/>
+        <property name="password" value="sandesh03"></property>
+    
+    </bean>
+    
+    <!--sessionfactory Automatic table creation -->
+    
+     <bean class="org.springframework.orm.hibernate5.LocalSessionFactoryBean" name="lsf">
+     <!--  property no 1 -->
+       <property name="dataSource" ref="dmds"/>
+       <!-- property no 2 -->
+       <property name="hibernateProperties">
+          <props>
+             <prop key="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</prop>
+             <prop key="hibernate.show.sql">true</prop>
+             <prop key="hibernate.hbm2ddl.auto">update</prop>
+          </props>
+       </property>
+     <!--   property no 3  -->
+       <property name="annotatedClasses">
+            <value>com.orm.Entity.Book</value>
+       </property>
+    
+    </bean> 
+    
+    <!-- hibernatetemplate properties -->
+        <bean class="org.springframework.orm.hibernate5.HibernateTemplate" name="temp" p:sessionFactory-ref="lsf"/>
+    
+    <!--DAO  -->
+        <bean class="com.orm.BookDao.BookDaoImpl" name="B1" p:temp-ref="temp"/>
+        
+        <!--Transactional Manager  -->
+     <bean class="org.springframework.orm.hibernate5.HibernateTransactionManager" name="transactionManager">
+       <property name="sessionFactory" ref="lsf"/>
+    </bean>
+    
+    
+</beans>
