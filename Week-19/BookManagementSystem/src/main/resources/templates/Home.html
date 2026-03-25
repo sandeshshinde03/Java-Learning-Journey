@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Book Management System</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f4f6f9;
+}
+
+/* Navbar */
+
+.navbar{
+    background:#2c3e50;
+    color:white;
+    padding:18px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.navbar h1{
+    font-size:24px;
+}
+
+.navbar a{
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
+    font-size:16px;
+}
+
+/* Main container */
+
+.container{
+    width:80%;
+    margin:60px auto;
+    background:white;
+    padding:40px;
+    border-radius:8px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    text-align:center;
+}
+
+/* Welcome text */
+
+.container h2{
+    margin-bottom:10px;
+    color:#333;
+}
+
+.container p{
+    margin-bottom:30px;
+    color:#666;
+    font-size:16px;
+}
+
+/* Buttons */
+
+.btn{
+    padding:12px 22px;
+    border-radius:6px;
+    text-decoration:none;
+    color:white;
+    font-size:15px;
+    margin:10px;
+    display:inline-block;
+}
+
+.add-btn{
+    background:#3498db;
+}
+
+.add-btn:hover{
+    background:#2980b9;
+}
+
+.view-btn{
+    background:#27ae60;
+}
+
+.view-btn:hover{
+    background:#1e8449;
+}
+
+/* Footer */
+
+footer{
+    margin-top:40px;
+    text-align:center;
+    padding:15px;
+    color:#777;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- Navbar -->
+
+<div class="navbar">
+<h1>Book Management System</h1>
+
+<div>
+<a th:href="@{/}">Home</a>
+<a th:href="@{/viewBooks}">Books</a>
+<a th:href="@{/addBook}">Add Book</a>
+</div>
+
+</div>
+
+<!-- Main Content -->
+
+<div class="container">
+
+<h2>Welcome to Book Management System</h2>
+
+<p>
+This application helps you manage your books easily.  
+You can add new books, view all books, edit book details, and delete books.
+</p>
+
+<a th:href="@{/addBook}" class="btn add-btn">
+➕ Add New Book
+</a>
+
+<a th:href="@{/viewBooks}" class="btn view-btn">
+📚 View All Books
+</a>
+
+</div>
+
+<footer>
+© 2026 Book Management System
+</footer>
+
+</body>
+</html>
